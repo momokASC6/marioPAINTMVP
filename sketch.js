@@ -8,7 +8,9 @@ var greenBoxX = 500;
 
 function setup() {
     createCanvas(1000,1000); // Set canvas to 500x500
+}
 
+function draw() {
     fill('blue');
     rect(blueBoxX, 0, boxWidth, boxHeight);
 
@@ -29,6 +31,14 @@ function mouseDragged() {
 }
 
 function mouseClicked() {
-
+    if(mouseY >=0 && mouseY <= boxHeight) {
+        if(mouseX >= blueBoxX && mouseX <= blueBoxX + boxWidth)
+            fillColor = "blue";
+        else if(mouseX >= redBoxX && mouseX <= redBoxX + boxWidth)
+            fillColor = "red";
+        else if(mouseX >= greenBoxX && mouseX <= greenBoxX + boxWidth)
+            fillColor = "green";
+    }
+    
 }
 
